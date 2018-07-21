@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+
+<!DOCTYPE struts-config PUBLIC
+          "-//Apache Software Foundation//DTD Struts Configuration 1.1//EN"
+          "http://jakarta.apache.org/struts/dtds/struts-config_1_3.dtd">
+
+<struts-config>
+
+  <!-- ========== Formulaire ============================== -->
+	<form-beans>
+		<form-bean name="modificationFormMdpUser"
+			type="org.apache.struts.validator.DynaValidatorActionForm">
+			<form-property name="login" type="java.lang.String" />
+			<form-property name="mdp" type="java.lang.String" />
+			<form-property name="mdp02" type="java.lang.String" />
+		</form-bean>
+	</form-beans>
+
+  <!-- ========== Mapping des actions ============================== -->
+	<action-mappings>
+
+	
+    <action    path      = "/AfficherModificationMdpUser"
+               name      = "modificationFormMdpUser"
+               type      = "action.UserAfficherAction"
+               scope     = "request"
+               validate  = "false"
+               attribute = "bean">
+               
+        <forward name="succes" path="page.userModificationMdp"  />
+
+    </action>
+
+
+    <action    path      = "/ModifierModificationMdpUser"
+               name      = "modificationFormMdpUser"
+               type      = "action.UserModifierMdpAction"
+               scope     = "request"
+               validate  = "true"
+               attribute = "bean" 
+               input     = "/AfficherModificationMdpUser.do">
+               
+        <forward name="succes" path="/AfficherModificationMdpUser.do"  />
+
+    </action>	
+	
+
+	</action-mappings>
+	
+	
+
+	
+  <!-- ========== Ressources de definitions de messages =========================== -->
+  <message-resources parameter="property.ResourcesUserModificationMdp" key="modificationMdpUser" />
+	
+
+</struts-config>

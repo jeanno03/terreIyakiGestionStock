@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE struts-config PUBLIC
+          "-//Apache Software Foundation//DTD Struts Configuration 1.1//EN"
+          "http://jakarta.apache.org/struts/dtds/struts-config_1_3.dtd">
+
+<struts-config>
+
+	<!-- ========== Formulaire ============================== -->
+	<form-beans>
+		<form-bean name="producTerreIyakiProductForm"
+			type="org.apache.struts.validator.DynaValidatorActionForm">
+
+			<form-property name="debut" type="java.lang.String" />
+			<form-property name="id" type="java.lang.String" />
+
+		</form-bean>
+	</form-beans>
+
+	<!-- ========== Mapping des actions ============================== -->
+	<action-mappings>
+
+
+		<action path="/AfficherProduct"
+			name="producTerreIyakiProductForm" type="event.ProductAfficherEvent"
+			scope="request" validate="false" attribute="bean">
+			<forward name="succes" path="page.productAfficher" />
+		</action>
+
+
+		<action path="/AfficherProductById"
+			name="producTerreIyakiProductForm"
+			type="action.ProductAfficherFreshProductByIdAction" scope="request"
+			validate="true" attribute="bean" input="/AfficherProduct.do">
+
+			<forward name="succes" path="/AfficherProduct.do" />
+
+		</action>
+
+
+	</action-mappings>
+	<!-- ========== Ressources de definitions de messages =========================== -->
+
+</struts-config>

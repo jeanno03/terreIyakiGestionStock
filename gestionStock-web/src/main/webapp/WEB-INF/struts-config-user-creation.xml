@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+
+<!DOCTYPE struts-config PUBLIC
+          "-//Apache Software Foundation//DTD Struts Configuration 1.1//EN"
+          "http://jakarta.apache.org/struts/dtds/struts-config_1_3.dtd">
+
+<struts-config>
+
+  <!-- ========== Formulaire ============================== -->
+	<form-beans>
+		<form-bean name="creationFormUser"
+			type="org.apache.struts.validator.DynaValidatorActionForm">
+
+			<form-property name="login" type="java.lang.String" />
+			<form-property name="grant" type="java.lang.String" />
+			<form-property name="mdp" type="java.lang.String" />
+			<form-property name="mdp02" type="java.lang.String" />
+			<form-property name="email" type="java.lang.String" />
+			<form-property name="email02" type="java.lang.String" />
+			<form-property name="firstName" type="java.lang.String" />
+			<form-property name="lastName" type="java.lang.String" />
+
+		</form-bean>
+	</form-beans>
+
+  <!-- ========== Mapping des actions ============================== -->
+  <action-mappings>
+ 
+ 		<action path="/AfficherCreationUser"
+			name="creationFormUser"
+			type="action.UserAfficherAction"
+			scope="request" 
+			validate="false" 
+			attribute="bean">
+
+			<forward name="succes" path="page.userCreation" />
+			
+		</action> 
+  
+		<action path="/CreerCreationUser" 
+		name="creationFormUser"
+		type="action.UserCreerAction"
+			scope="request" 
+			validate="true" attribute="bean"
+			input     = "/AfficherCreationUser.do">
+
+			<forward name="succes" path="/AfficherCreationUser.do" />
+			
+		</action>
+
+  
+  </action-mappings>
+  
+
+  
+  
+  <!-- ========== Ressources de definitions de messages =========================== -->
+  <message-resources parameter="property.ResourcesUserCreation" key="creationUser" />
+
+</struts-config>

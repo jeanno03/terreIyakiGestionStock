@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+
+<!DOCTYPE form-validation PUBLIC
+          "-//Apache Software Foundation//DTD Commons Validator Rules Configuration 1.1.3//EN"
+          "http://jakarta.apache.org/commons/dtds/validator_1_3_0.dtd">
+<form-validation>
+	<formset>
+		<form name="/ModifierModificationUser">
+
+
+			<!-- Contraintes sur le champ email : obligatoire -->
+			<field property="email" depends="required, email">
+				<msg name="required" key="modification.email.error.required"
+					bundle="modificationUser" />
+				<msg name="email" key="modification.email.error.email"
+					bundle="modificationUser" />
+
+			</field>
+			
+
+			<!-- Contraintes sur le champ firstName : obligatoire -->
+			<field property="firstName" depends="required, minlength">
+				<var>
+					<var-name>minlength</var-name>
+					<var-value>4</var-value>
+				</var>			
+				<msg name="required" key="modification.firstName.error.required"
+					bundle="modificationUser" />
+				<msg name="minlength" key="modification.firstName.error.minlength"
+					bundle="modificationUser" />	
+			</field>
+			<!-- Contraintes sur le champ lastName : obligatoire -->
+			<field property="lastName" depends="required, minlength">
+				<var>
+					<var-name>minlength</var-name>
+					<var-value>4</var-value>
+				</var>				
+				<msg name="required" key="modification.lastName.error.required"
+					bundle="modificationUser" />
+				<msg name="minlength" key="modification.lastName.error.minlength"
+					bundle="modificationUser" />	
+			</field>
+						<!-- Contraintes sur le droit : obligatoire -->
+			<field property="grant" depends="required">
+				<msg name="required" key="modification.grant.error.required"
+					bundle="modificationUser" />
+			</field>
+			
+		</form>
+	</formset>
+</form-validation>

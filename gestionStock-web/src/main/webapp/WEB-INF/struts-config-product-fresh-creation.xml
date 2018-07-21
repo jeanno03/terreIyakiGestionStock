@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE struts-config PUBLIC
+          "-//Apache Software Foundation//DTD Struts Configuration 1.1//EN"
+          "http://jakarta.apache.org/struts/dtds/struts-config_1_3.dtd">
+
+<struts-config>
+
+	<!-- ========== Formulaire ============================== -->
+	<form-beans>
+		<form-bean name="freshproductForm"
+			type="org.apache.struts.validator.DynaValidatorActionForm">
+
+			<form-property name="name" type="java.lang.String" />
+			<form-property name="description"
+				type="java.lang.String" />
+
+		</form-bean>
+	</form-beans>
+
+
+	<!-- ========== Mapping des actions ============================== -->
+	<action-mappings>
+		<action path="/AfficherFreshProduct" name="freshproductForm"
+			type="action.ProductAfficherFreshProductAction" scope="request"
+			validate="false" attribute="bean">
+
+			<forward name="succes" path="page.productFreshAfficher" />
+		</action>
+		
+				<action path="/AfficherTerreIyakiProductListByFreshProduct"
+			name="freshproductForm"
+			type="action.ProductAfficherTerreIyakiProductListByFreshProductAction"
+			scope="request" validate="true" attribute="bean"
+			input="/AfficherFreshProduct.do">
+
+			<forward name="succes" path="/AfficherFreshProduct.do" />
+
+		</action>
+
+		<action path="/CreerFreshProduct" name="freshproductForm"
+			type="action.ProductCreerFreshProductAction" scope="request"
+			validate="true" attribute="bean" input="/AfficherFreshProduct.do">
+
+			<forward name="succes" path="/AfficherFreshProduct.do" />
+
+		</action>
+
+
+
+
+	</action-mappings>
+
+	<!-- ========== Ressources de definitions de messages =========================== -->
+	<message-resources
+		parameter="property.ResourcesProductFreshProduct" key="freshProduct" />
+
+</struts-config>

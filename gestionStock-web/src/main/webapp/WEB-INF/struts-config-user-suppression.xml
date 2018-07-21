@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+
+<!DOCTYPE struts-config PUBLIC
+          "-//Apache Software Foundation//DTD Struts Configuration 1.1//EN"
+          "http://jakarta.apache.org/struts/dtds/struts-config_1_3.dtd">
+
+<struts-config>
+
+	<!-- ========== Formulaire ============================== -->
+	<form-beans>
+		<form-bean name="suppressionFormUser"
+			type="org.apache.struts.validator.DynaValidatorActionForm">
+
+			<form-property name="login" type="java.lang.String" />
+			<form-property name="status" type="java.lang.String" />
+		</form-bean>
+	</form-beans>
+
+
+	<!-- ========== Mapping des actions ============================== -->
+	<action-mappings>
+
+		<action path="/AfficherSuppressionUser"
+			name="suppressionFormUser" type="action.UserAfficherStatusAction"
+			scope="request" validate="false" attribute="bean">
+
+			<forward name="succes" path="page.userSuppression" />
+
+		</action>
+
+		<action path="/ModifierModificationStatusUser"
+			name="suppressionFormUser" type="action.UserModifierStatusAction"
+			scope="request" validate="false" attribute="bean">
+
+			<forward name="succes" path="/AfficherSuppressionUser.do" />
+
+		</action>
+		
+		
+		<action path="/AfficherHistoriqueModificationStatusUser"
+			name="suppressionFormUser" type="action.UserAfficherHistoriqueStatusAction"
+			scope="request" validate="false" attribute="bean">
+
+			<forward name="succes" path="/AfficherSuppressionUser.do" />
+
+		</action>		
+	</action-mappings>
+
+</struts-config>

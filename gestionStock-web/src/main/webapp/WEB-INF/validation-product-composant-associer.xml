@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+
+<!DOCTYPE form-validation PUBLIC
+          "-//Apache Software Foundation//DTD Commons Validator Rules Configuration 1.1.3//EN"
+          "http://jakarta.apache.org/commons/dtds/validator_1_3_0.dtd">
+<form-validation>
+	<formset>
+		<form name="/AssocierProductComposant">
+
+
+					<!-- Contraintes sur le champ "terreIyakiProduct" : obligatoire -->
+		<field property="terreIyakiProductComposant" depends="required">
+				<msg name="required" key="composant-product.terreIyakiProduct.error.required"
+					bundle="productComposantAssocier" />
+			</field>
+
+
+		</form>
+	</formset>
+</form-validation>

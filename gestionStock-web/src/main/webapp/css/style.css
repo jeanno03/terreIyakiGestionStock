@@ -1,0 +1,136 @@
+.logo {
+	height: 100px;
+}
+
+#conteneurHeader {
+	display: flex;
+}
+
+.elementHeader {
+	margin: auto;
+}
+
+#conteneurNavigation {
+	display: flex;
+	background-color: LightYellow;
+	color: black;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	border: 1px solid Gold;
+}
+
+.elementNavigation {
+	margin: auto;
+}
+
+#conteneurMenuUser {
+	display: flex;
+	background-color: Bisque;
+	color: black;
+	margin-top: 10px;
+
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+
+.elementMenuUser {
+	margin: auto;
+}
+
+#conteneurMenuMy {
+	display: flex;
+	background-color: Gold;
+	color: black;
+	margin-top: 10px;
+
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+
+.elementMenuProduct {
+	margin: auto;
+}
+
+#conteneurMenuProduct {
+	display: flex;
+	background-color: PowderBlue;
+	color: black;
+	margin-top: 10px;
+
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+
+.elementMenuStock{
+	margin: auto;
+}
+
+#conteneurMenuStock {
+	display: flex;
+	background-color: Lavender;
+	color: black;
+	margin-top: 10px;
+
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+
+.elementMenuMy {
+	margin: auto;
+}
+
+
+
+
+
+#conteneurUser {
+	display: flex;
+	background-color: white;
+	color: black;
+	border-top: 10px solid Gold;
+	border-left: 10px solid Gold;
+	border-right: 10px solid Gold;
+	border-bottom: 20px solid Gold;
+	margin-left: 3%;
+	margin-right: 3%;
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+.elementUser {
+	margin: auto;
+}
+
+.colonneUser {
+width:10%;
+	
+}
+
+.ligneUserUn {
+	margin-top: 10px;
+	margin-bottom: 10px;
+	background-color: LightYellow;
+	text-align: center;
+	
+}
+
+.ligneUserDeux {
+	color: LightSlateGray;
+	text-align: center;
+}
+
+.red{
+color:red;	
+}
+
+
+#conteneurVoid {
+	display: flex;
+}
+
+.elementVoid{
+	margin: auto;
+}
+
+
+

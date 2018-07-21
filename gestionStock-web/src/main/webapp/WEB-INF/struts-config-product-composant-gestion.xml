@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE struts-config PUBLIC
+          "-//Apache Software Foundation//DTD Struts Configuration 1.1//EN"
+          "http://jakarta.apache.org/struts/dtds/struts-config_1_3.dtd">
+
+<struts-config>
+
+	<!-- ========== Formulaire ============================== -->
+	<form-beans>
+		<form-bean name="productComposantGererForm"
+			type="org.apache.struts.validator.DynaValidatorActionForm">
+
+<form-property name="idComposant" type="java.lang.String" />
+<form-property name="nameComposant" type="java.lang.String" />
+<form-property name="terreIyakiProductComposant" type="java.lang.String" />
+<form-property name="numComposant" type="java.lang.String" />
+<form-property name="freshProductComposant" type="java.lang.String" />
+<form-property name="amountComposant" type="java.lang.String" />
+<form-property name="statusComposant" type="java.lang.String" />
+
+
+		</form-bean>
+	</form-beans>
+
+
+
+	<!-- ========== Mapping des actions ============================== -->
+	<action-mappings>
+		<action path="/GererProductComposant"
+		name="productComposantGererForm"
+			type="action.ProductAfficherProductComposantAction" scope="request"
+			validate="false" attribute="bean">
+
+			<forward name="succes" path="page.productComposantAfficherGerer" />
+		</action>
+		
+		
+				
+		<action path="/GererModifierProductComposant" name="productComposantGererForm"
+			type="action.ProductGererModifierProductComposantAction" scope="request"
+			validate="true" attribute="bean" input="/GererProductComposant.do">
+
+			<forward name="succes" path="/GererProductComposant.do" />
+
+		</action>	
+		
+		
+		
+		
+		
+
+	</action-mappings>
+	
+  <!-- ========== Ressources de definitions de messages =========================== -->
+
+	<message-resources
+		parameter="property.ResourcesProductProductComposantGerer" key="productComposantGerer" />
+
+
+
+
+
+</struts-config>

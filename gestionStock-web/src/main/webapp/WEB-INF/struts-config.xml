@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+
+<!DOCTYPE struts-config PUBLIC
+          "-//Apache Software Foundation//DTD Struts Configuration 1.1//EN"
+          "http://jakarta.apache.org/struts/dtds/struts-config_1_3.dtd">
+
+<struts-config>
+
+
+	<action-mappings>
+
+
+
+		<!-- ========== Mapping des actions ============================== -->
+
+		<action path="/EditerDonnees" type="action.DataCreerAction"
+			scope="request" validate="false" attribute="bean">
+			<forward name="succes" path="page.myConnection" />
+
+		</action>
+
+		<action path="/WebService" type="action.DataWebServiceAction"
+			scope="request" validate="false" attribute="bean">
+			<forward name="succes" path="page.myConnection" />
+
+		</action>
+
+		<action path="/AfficherMyConnection"
+			type="action.MyVersConnectionAction" scope="request" validate="false"
+			attribute="bean">
+			<forward name="succes" path="/index.jsp" />
+		</action>
+		<action path="/AfficherMyInfo" forward="page.myInfo" />
+
+		<action path="/AfficherMyHistory" forward="page.myHistory" />
+
+
+
+		<action path="/AfficherUser" type="action.UserAfficherAction"
+			scope="request" validate="false" attribute="bean">
+			<forward name="succes" path="page.userAffichage" />
+		</action>
+
+
+
+		<action path="/AfficherStock" forward="page.stockAfficher" />
+
+
+
+
+	</action-mappings>
+
+	<!-- ========== Ressources de définitions de message =========================== -->
+	<message-resources parameter="Resources" />
+
+
+	<!-- ========== Validation des formulaires =========================== -->
+	<plug-in
+		className="org.apache.struts.validator.ValidatorPlugIn">
+		<set-property property="pathnames"
+			value="/org/apache/struts/validator/validator-rules.xml,
+			/WEB-INF/validation-my-connection.xml,
+                      /WEB-INF/validation-user-creation.xml,
+                      /WEB-INF/validation-user-modification.xml,
+                      /WEB-INF/validation-user-modification-mdp.xml,
+                      /WEB-INF/validation-product-fresh-product.xml,
+                      /WEB-INF/validation-product-fresh-product-gerer.xml,                    
+                      /WEB-INF/validation-product-composant.xml,
+                      /WEB-INF/validation-product-composant-associer.xml,
+                      /WEB-INF/validation-product-composant-gerer.xml    
+                      " />
+
+		<!-- <set-property property="pathnames" value="/org/apache/struts/validator/validator-rules.xml, 
+			/WEB-INF/validation-user-modification.xml" /> -->
+	</plug-in>
+	<!-- <plug-in className="org.apache.struts.validator.ValidatorPlugIn"> <set-property 
+		property="pathnames" value="/org/apache/struts/validator/validator-rules.xml, 
+		/WEB-INF/validation-user-modification-mdp.xml" /> </plug-in> -->
+
+
+
+	<!-- ========== Tiles =========================== -->
+	<plug-in className="org.apache.struts.tiles.TilesPlugin">
+		<set-property property="definitions-config"
+			value="
+			/WEB-INF/tiles-defs-application.xml
+			" />
+	</plug-in>
+</struts-config>

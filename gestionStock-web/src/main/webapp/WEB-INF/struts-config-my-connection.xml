@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+
+<!DOCTYPE struts-config PUBLIC
+          "-//Apache Software Foundation//DTD Struts Configuration 1.1//EN"
+          "http://jakarta.apache.org/struts/dtds/struts-config_1_3.dtd">
+
+<struts-config>
+
+	<!-- ========== Formulaire ============================== -->
+	<form-beans>
+		<form-bean name="connectionFormUser"
+			type="org.apache.struts.validator.DynaValidatorActionForm">
+			<form-property name="login" type="java.lang.String" />
+			<form-property name="mdp" type="java.lang.String" />
+		</form-bean>
+	</form-beans>
+
+	<!-- ========== Mapping des actions ============================== -->
+	<action-mappings>
+
+		<action path="/CreerConnectionUser" 
+		name="connectionFormUser"
+			type="action.MyConnectionAction" 
+			scope="request" 
+			validate="true"
+			attribute="bean" input="/AfficherMyConnection.do">
+			<forward name="succes" path="/AfficherVenteOrderItem.do" />
+		</action>
+		
+		
+		
+	<!--cette action va renvoyer vers page d acceuil requete home pour refresh	-->
+		<action path="/AfficherVenteOrderItem" 
+		
+			type="event.MyOrderItemAfficherEvent" 
+			scope="request" 
+			validate="false"
+			attribute="bean">
+			<forward name="succes" path="page.myConnection" />
+		</action>
+
+
+		<action path="/seDeconnecter" 
+		
+			type="action.MyDeconnectionAction" 
+			scope="request" 
+			validate="false"
+			attribute="bean">
+			<forward name="succes" path="/index.jsp" />
+		</action>
+		
+		
+	</action-mappings>
+	<!-- ========== Ressources de definitions de messages =========================== -->
+	<message-resources
+		parameter="property.ResourcesMyConnection" key="connectionMy" />
+
+</struts-config>		

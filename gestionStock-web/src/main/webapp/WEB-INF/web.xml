@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://java.sun.com/xml/ns/javaee"
+	xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
+	id="WebApp_ID" version="2.5">
+
+	<display-name>gestionStock</display-name>
+
+	<!-- Configuration de l'action servlet -->
+	<servlet>
+		<servlet-name>action</servlet-name>
+		<servlet-class>org.apache.struts.action.ActionServlet</servlet-class>
+		<init-param>
+			<param-name>config</param-name>
+			<param-value>
+      /WEB-INF/struts-config.xml,
+      /WEB-INF/struts-config-my-connection.xml,
+      /WEB-INF/struts-config-user-creation.xml,  
+      /WEB-INF/struts-config-user-suppression.xml,
+      /WEB-INF/struts-config-user-modification.xml,
+      /WEB-INF/struts-config-user-modification-mdp.xml,
+      /WEB-INF/struts-config-product-terreIyakiProduct.xml,
+      /WEB-INF/struts-config-product-fresh-creation.xml,
+      /WEB-INF/struts-config-product-fresh-gestion.xml,
+      /WEB-INF/struts-config-product-composant-creation.xml,
+      /WEB-INF/struts-config-product-composant-gestion.xml
+            </param-value>
+		</init-param>
+		<init-param>
+			<param-name>chainConfig</param-name>
+			<param-value>org/apache/struts/tiles/chain-config.xml</param-value>
+		</init-param>
+
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+
+	<!-- Action Servlet Mapping -->
+	<servlet-mapping>
+		<servlet-name>action</servlet-name>
+		<url-pattern>*.do</url-pattern>
+	</servlet-mapping>
+
+
+
+
+	<!-- page d'accueil de l'application -->
+	<welcome-file-list>
+		<welcome-file>AfficherMyConnection.do</welcome-file>
+	</welcome-file-list>
+
+
+
+</web-app>

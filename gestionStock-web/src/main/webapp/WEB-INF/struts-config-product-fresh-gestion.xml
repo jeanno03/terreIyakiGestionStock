@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE struts-config PUBLIC
+          "-//Apache Software Foundation//DTD Struts Configuration 1.1//EN"
+          "http://jakarta.apache.org/struts/dtds/struts-config_1_3.dtd">
+
+<struts-config>
+
+	<!-- ========== Formulaire ============================== -->
+	<form-beans>
+		<form-bean name="freshproductGererForm"
+			type="org.apache.struts.validator.DynaValidatorActionForm">
+
+			<form-property name="name" type="java.lang.String" />
+			<form-property name="description"
+				type="java.lang.String" />
+			<form-property name="terreIyakiProduct" type="java.lang.String" />	
+				
+		
+
+		</form-bean>
+	</form-beans>
+
+	<!-- ========== Mapping des actions ============================== -->
+
+	<action-mappings>
+		<action path="/GererFreshProduct" name="freshproductGererForm"
+			type="action.ProductAfficherFreshProductAction" scope="request"
+			validate="false" attribute="bean">
+		<forward name="succes" path="page.productFreshGerer" />
+		</action>
+	
+
+		<action path="/AfficherTerreIyakiProductListByFreshProductGerer"
+			name="freshproductGererForm"
+			type="action.ProductAfficherTerreIyakiProductListByFreshProductAction"
+			scope="request" validate="true" attribute="bean"
+			input="/GererFreshProduct.do">
+
+			<forward name="succes" path="/GererFreshProduct.do" />
+
+		</action>
+		
+			<action path="/AssocierTerreIyakiProduct" 
+		name="freshproductGererForm"
+		type="action.ProductModifierFreshProductAssocierAction"
+			scope="request" 
+			validate="true" attribute="bean"
+			input     = "/AfficherTerreIyakiProductListByFreshProductGerer.do">
+
+			<forward name="succes" path="/AfficherTerreIyakiProductListByFreshProductGerer.do" />
+			
+		</action>
+		
+		
+
+		
+
+</action-mappings>
+
+	<!-- ========== Ressources de definitions de messages =========================== -->
+	<message-resources
+		parameter="property.ResourcesProductFreshProductGerer" key="freshProductGerer" />
+</struts-config>

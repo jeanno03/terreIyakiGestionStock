@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE tiles-definitions PUBLIC
+       "-//Apache Software Foundation//DTD Tiles Configuration 1.1//EN"
+       "http://jakarta.apache.org/struts/dtds/tiles-config_1_3.dtd">
+
+<tiles-definitions>
+
+	<!--  Définition de la page my connection -->
+	<definition name="page.myConnection" template="/pages/applicationPage.jsp">
+		<put name="application"  value="/pages/myConnection.jsp" />
+	</definition>
+	
+	<!--  Définition de la page my infos -->
+	<definition name="page.myInfo" template="/pages/applicationPage.jsp">
+		<put name="application"  value="/pages/myInfo.jsp" />
+	</definition>
+	
+	<!--  Définition de la page my historique -->
+	<definition name="page.myHistory" template="/pages/applicationPage.jsp">
+		<put name="application"  value="/pages/myHistory.jsp" />
+	</definition>	
+
+
+	<!--  Définition de la page d'affichage -->
+	<definition name="page.userAffichage" template="/pages/applicationPage.jsp">
+		<put name="application"  value="/pages/userAfficher.jsp" />
+	</definition>
+
+	<!--  Définition de la page de création -->
+	<definition name="page.userCreation" template="/pages/applicationPage.jsp">
+		<put name="application"  value="/pages/userCreer.jsp" />
+	</definition>
+
+	<!--  Définition de la page de suppression -->
+	<definition name="page.userSuppression" template="/pages/applicationPage.jsp">
+		<put name="application"  value="/pages/userSupprimer.jsp" />
+	</definition>
+
+	<!--  Définition de la page de modification -->
+	<definition name="page.userModification" template="/pages/applicationPage.jsp">
+		<put name="application"  value="/pages/userModifier.jsp" />
+	</definition>
+	
+		<!--  Définition de la page de modificationMdp -->
+	<definition name="page.userModificationMdp" template="/pages/applicationPage.jsp">
+		<put name="application"  value="/pages/userModifierMdp.jsp" />
+	</definition>
+	
+	
+	
+
+	
+			<!--  Définition de la page product affichage -->
+	<definition name="page.productAfficher" template="/pages/applicationPage.jsp">
+		<put name="application"  value="/pages/productAfficher.jsp" />
+	</definition>
+	
+			<!--  Définition de la page product fresh affichage création -->
+	<definition name="page.productFreshAfficher" template="/pages/applicationPage.jsp">
+		<put name="application"  value="/pages/productFreshAfficherCreer.jsp" />
+	</definition>	
+
+			<!--  Définition de la page product fresh affichage gestion -->
+	<definition name="page.productFreshGerer" template="/pages/applicationPage.jsp">
+		<put name="application"  value="/pages/productFreshAfficherModifier.jsp" />
+	</definition>
+
+
+			<!--  Définition de la page product composant affichage création-->
+	<definition name="page.productComposantAfficherCreer" template="/pages/applicationPage.jsp">
+		<put name="application"  value="/pages/productComposantAfficherCreer.jsp" />
+	</definition>
+	
+			<!--  Définition de la page product composant affichage gestion-->
+	<definition name="page.productComposantAfficherGerer" template="/pages/applicationPage.jsp">
+		<put name="application"  value="/pages/productComposantAfficherModifier.jsp" />
+	</definition>
+			
+				<!--  Définition de la page Stock affichage -->
+	<definition name="page.stockAfficher" template="/pages/applicationPage.jsp">
+		<put name="application"  value="/pages/stockAfficher.jsp" />
+	</definition>	
+	
+
+
+
+
+	
+</tiles-definitions>
